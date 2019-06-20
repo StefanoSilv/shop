@@ -1,4 +1,4 @@
-const db= require('./db.js')
+const db= require('../db.js')
 
 const newfunction= (req, res) => {
 	db.query(`SELECT * FROM products`, (err,result)=>{

@@ -1,9 +1,7 @@
 // Config
 const express = require('express')
-
 const path = require('path')
 const app = express()
-const newfunction= require('./function.js')
 
 //database
 
@@ -20,21 +18,10 @@ app.get('/', (req, res) => {
 	console.log('__dirname', __dirname)
 })
 
+// API
 
-app.get('/products', require('./function.js') )
-
-
-// app.get('/prova', (req,res)=>{
-// 	provadb.query('SELECT * FROM brands', (err,result)=>{
-// 		if(err){
-// 			console.log('err',err)
-// 		}else{
-// 			res.send(result.rows)
-// 		}
-// 	})
-// })
-
-
+app.get('/products', require('./controllers/products_get.js') )
+app.get('/colors', require('./controllers/color_get.js') )
 
 // Run Server
 app.listen(3000, () => {
