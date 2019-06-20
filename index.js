@@ -3,10 +3,12 @@ const express = require('express')
 
 const path = require('path')
 const app = express()
+const newfunction= require('./function.js')
 
 //database
 
 const db= require('./db.js')
+// const provadb= require('./prova.js')
 
 // Static Files
 
@@ -19,25 +21,19 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/products', (req, res) => {
-	db.query(`SELECT * FROM products`, (err,result)=>{
-		if(err){
-			console.log('err',err)
-		}else{
-			console.log('result',result.rows);
-		}
-	})
-})
+app.get('/products', require('./function.js') )
 
-app.get('/categories', (req,res)=>{
-	db.query('SELECT * FROM categories', (err,result)=>{
-		if(err){
-			console.log('err',err)
-		}else{
-			console.log('categories', result.rows);
-		}
-	})
-})
+
+// app.get('/prova', (req,res)=>{
+// 	provadb.query('SELECT * FROM brands', (err,result)=>{
+// 		if(err){
+// 			console.log('err',err)
+// 		}else{
+// 			res.send(result.rows)
+// 		}
+// 	})
+// })
+
 
 
 // Run Server

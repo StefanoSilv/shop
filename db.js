@@ -12,7 +12,7 @@ db.connect((err)=>{
 	if (err){
 		console.log('Error connecting to PostgreSQL database')
 	}else{
-		console.log('Connected to PostgreSQL database');
+		console.log('Connected to PostgreSQL database')
 	}
 })
 
