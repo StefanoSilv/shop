@@ -20,8 +20,8 @@ app.get('/', (req, res) => {
 
 // API
 
-app.get('/products', require('./controllers/products_get.js') )
-app.get('/colors', require('./controllers/color_get.js') )
+app.get('/api/products', require('./controllers/products_get.js') )
+app.get('/api/colors', require('./controllers/color_get.js') )
 
 // Run Server
 app.listen(3000, () => {
