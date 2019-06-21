@@ -1,3 +1,12 @@
+axios.get('http://localhost:3000/products')
+	.then( (res)=> {
+		// handle success
+		let products= res.data
+		console.log(res);
+	}).catch((err) => {
+		console.log('err', err);
+	})
+
 window.onload = () =>{
 	let sidebar= document.getElementById('sidebar')
 	let ul= document.getElementsByTagName('ul')[0]
@@ -6,7 +15,7 @@ window.onload = () =>{
 		ul.insertAdjacentHTML('beforeEnd',`<li>
 		<a href="#">${c}</a>
 	</li>`)
-})
+	})
 	let products = document.getElementById('products')
 	console.log(products)
 	let items = ['Item1','Item2','Item3','Item4']
@@ -28,6 +37,6 @@ window.onload = () =>{
 			</div>
 		</div>
 		`
-	)
+		)
 	})
- }
+}
