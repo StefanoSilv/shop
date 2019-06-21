@@ -1,10 +1,10 @@
 window.onload = () =>{
-	axios.get('http://localhost:3000/api/colors').then( (res) => {
+	axios.get('http://localhost:3000/api/categories').then( (res) => {
 		let categories=res.data
 		let ul= document.getElementsByTagName('ul')[0]
 		categories.forEach( (c) => {
 			ul.insertAdjacentHTML('beforeEnd',`<li>
-		<a href="#">${c.rating}</a>
+		<a href="#">${c.name}</a>
 	</li>`)
 		})
 	})
@@ -14,9 +14,10 @@ window.onload = () =>{
 			let products = document.getElementById('products')
 			console.log(items, products)
 			items.forEach((i) =>{
+				console.log(i.image)
 				products.insertAdjacentHTML('afterBegin',`
 		<div class="product">
-			<div class="product-image">
+		<div class="product-image" style="background-image: url('../img${i.image}')">
 				<i class="far fa-star"></i>
 			</div>
 			<div class="product-extras">
@@ -37,3 +38,13 @@ window.onload = () =>{
 		).catch((err) => {
 			console.log('err', err);
 		})}
+
+axios.get('http://localhost:3000/api/productsx')
+	.then( (res)=> {
+		let items= res.data
+		let products = document.getElementById('products')
+		console.log(items, products)
+	}
+	).catch((err) => {
+		console.log('err', err);
+	})

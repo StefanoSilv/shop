@@ -40,7 +40,7 @@ h1 {
 
 .product-image {
 	background-color: #f6f6f6;
-	background-image: url('../img/classic_grey.jpg');
+	/* background-image: url('../img/bags/classic_black.jpg'); */
 	background-size: auto 90% ;
 	background-repeat: no-repeat;
 	background-position: center 15px;
