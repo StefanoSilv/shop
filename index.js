@@ -27,6 +27,6 @@ app.get('/api/colors', require('./controllers/color_get.js') )
 app.get('/api/categories', require('./controllers/categories_get.js') )
 
 // Run Server
-app.listen(3000, () => {
-	console.log('Server listening on port 3000');
+app.listen(process.env.PORT, () => {
+	console.log(`Server listening on port ${process.env.PORT}`);
 })
