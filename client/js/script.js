@@ -1,5 +1,5 @@
 window.onload = () =>{
-	axios.get('http://localhost:3000/api/categories').then( (res) => {
+	axios.get('/api/categories').then( (res) => {
 		let categories=res.data
 		let ul= document.getElementsByTagName('ul')[0]
 		categories.forEach( (c) => {
@@ -8,7 +8,7 @@ window.onload = () =>{
 	</li>`)
 		})
 	})}
-	// axios.get('http://localhost:3000/api/products')
+	// axios.get('/api/products')
 	// 	.then( (res)=> {
 	// 		let items= res.data
 	// 		let products = document.getElementById('products')
@@ -39,7 +39,7 @@ window.onload = () =>{
 	// 		console.log('err', err);
 	// 	})}
 
-axios.get('http://localhost:3000/api/productsx')
+axios.get('/api/productsx')
 	.then( (res)=> {
 		let items= res.data
 		let products = document.getElementById('products')
@@ -51,7 +51,7 @@ axios.get('http://localhost:3000/api/productsx')
 
 document.addEventListener('click', (e) =>{
 	if  (e.target.classList.contains('category')) {
-		axios.get(`http://localhost:3000/api/products/${e.target.id}`).then( (res) => {
+		axios.get(`/api/products/${e.target.id}`).then( (res) => {
 			let items= res.data
 			let products = document.getElementById('products')
 			products.innerHTML = ''
